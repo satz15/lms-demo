@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .text-dodgerblue-600 {
+    color: #1e90ff;
+  }
+  .text-dodgerblue-700 {
+    color: #1e6a9e;
+  }
+  .bg-dodgerblue-600 {
+    background-color: #1e90ff;
+  }
+  .bg-dodgerblue-700 {
+    background-color: #1e6a9e;
+  }
+  .bg-dodgerblue-100 {
+    background-color: #b0c4de;
+  }
+}
