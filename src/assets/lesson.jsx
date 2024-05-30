@@ -1,5 +1,7 @@
 import React from 'react';
-import One from '../../public/one.jpg'
+import One from '../../public/one.jpg';
+import PDFGenerator from './pdf';
+import { PDFDownloadLink } from "@react-pdf/renderer"
 
 const LessonPlanDashboard = () => {
   const subtopics = [
@@ -101,12 +103,17 @@ const LessonPlanDashboard = () => {
             <a href="/path/to/sample_presentation.pptx" className="text-dodgerblue-600 underline block" target="_blank" rel="noopener noreferrer">Example: Basic HTML Tags</a>
           </div>
         </div>
+        
 
         {/* Box 5 */}
         <div className="col-span-1 h-full">
           <div className="bg-white p-6 rounded-lg shadow-md h-full">
             <h2 className="text-xl font-semibold mb-4 text-dodgerblue-700">Worksheet</h2>
-            <a href="/path/to/sample_worksheet.pdf" download className="text-dodgerblue-600 underline block">Download Worksheet</a>
+            <a href="/path/to/sample_worksheet.pdf" download className="text-dodgerblue-600 underline block"><div><PDFDownloadLink document={<PDFGenerator />} fileName="invoice.pdf">
+      {({ blob, url, loading, error }) =>
+        loading ? "Loading document..." : "Download PDF"
+      }
+    </PDFDownloadLink></div></a>
           </div>
         </div>
 
